@@ -202,9 +202,9 @@
 
     .avatar-container {
       width: 250px;
-      height: 250px;
-      margin: 2rem auto;
-      position: relative;
+  height: 250px;
+  margin: 2rem auto;
+  position: relative;
     }
 
     .avatar-blob {
@@ -221,19 +221,21 @@
 
     .avatar-blob::before {
       content: '';
-      position: absolute;
-      inset: 5px;
-      background: #111111;
-      border-radius: 50%;
+  position: absolute;
+  inset: 5px;
+  background: #111111;
+  border-radius: 50%;
+  z-index: 1;
     }
 
     .avatar-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      position: relative;
-      z-index: 1;
+      width: calc(100% - 10px); /* Account for the border */
+  height: calc(100% - 10px); /* Account for the border */
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  margin: 5px;
     }
 
     @keyframes morphing {
@@ -340,6 +342,14 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
       animation: shimmer 2s infinite;
     }
+    .avatar-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
 
     @keyframes shimmer {
       0% { left: -100%; }
@@ -406,17 +416,22 @@
     }
 
     .project-img {
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
-      border-radius: 15px;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: #667eea;
-    }
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  overflow: hidden; /* Ensures the image stays within the rounded corners */
+}
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire space */
+  transition: transform 0.3s ease; /* Adds a smooth hover effect */
+}
+.project-card:hover .project-img img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
 
     .project-details h2 {
       font-size: 1.5rem;
@@ -627,10 +642,10 @@
             <h1 class="about-heading">About Me</h1>
           </div>
           <div class="avatar-container">
-            <div class="avatar-blob">
-              <div style="width: 180px; height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white; font-weight: bold;">KB</div>
-            </div>
-          </div>
+  <div class="avatar-blob">
+    <img src="avtar_logo2.jpeg" alt="Kshitish Bhurtel" class="avatar-img">
+  </div>
+</div>
           <p>
             I am a 24-year-old BCA student studying at Institute Of Crisis Management (Samarpan Academy). I'm passionate about solving complex problems and creating beautiful, user-friendly applications. My journey in technology is driven by continuous learning and innovation, exploring everything from web development to mobile applications.
           </p>
@@ -720,9 +735,10 @@
       </div>
       <div class="portfolio-content container">
         <div class="project-card">
-          <div class="project-img">
-            <i class="fas fa-shield-alt"></i>
-          </div>
+          <div class="project-card">
+  <div class="project-img">
+    <img src="lakesha_securities_page.png" alt="Lakesha Security Website">
+  </div>
           <div class="project-details">
             <div class="tech-stack">
               <i class="fab fa-html5 tech-icon"></i>
@@ -743,9 +759,10 @@
         </div>
 
         <div class="project-card">
-          <div class="project-img">
-            <i class="fas fa-calculator"></i>
-          </div>
+          <div class="project-card">
+  <div class="project-img">
+    <img src="tax_calculator_for_nepal.png" alt="Tax Calculator for Nepal">
+  </div>
           <div class="project-details">
             <div class="tech-stack">
               <i class="fab fa-html5 tech-icon"></i>
