@@ -118,7 +118,7 @@
       66% { transform: translateY(10px) rotate(-1deg); }
     }
 
-    .name h1 {
+    .name h2 {
       font-size: 4rem;
       font-weight: 800;
       margin-bottom: 1rem;
