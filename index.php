@@ -359,7 +359,7 @@ echo "Data Saved";
         const screenRes = screen.width + "x" + screen.height;
 
         // Send data to server
-        fetch("save_visitor.php", {
+        fetch("window.location.href", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "browser_info=" + encodeURIComponent(browserInfo) + "&screen_res=" + encodeURIComponent(screenRes)
