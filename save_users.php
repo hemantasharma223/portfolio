@@ -1,6 +1,6 @@
 <?php
 // Database connection
-$pdo = new PDO("mysql:host=localhost;dbname=your_db", "db_user", "db_pass");
+$pdo = new PDO("mysql:host=https://server1.bisuphost.com:2083/cpsess8902991707/3rdparty/phpMyAdmin/;dbname=karkiand_users_view", "karkiand_kb", "Bhurtel1212@");
 
 // Function to get IP
 function getUserIP() {
