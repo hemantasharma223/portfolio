@@ -2,34 +2,52 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Visitors List</title>
+<title>Visitors Full Data</title>
 <style>
   body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
-  table { border-collapse: collapse; width: 100%; background: white; }
-  th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+  table { border-collapse: collapse; width: 100%; background: white; font-size: 13px; }
+  th, td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
   th { background-color: #4CAF50; color: white; }
   tr:nth-child(even) { background-color: #f2f2f2; }
-  pre { white-space: pre-wrap; max-width: 300px; word-wrap: break-word; }
-  #loading { font-weight: bold; }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 150px;
+    overflow-y: auto;
+    margin: 0;
+  }
+  #loading { font-weight: bold; margin-bottom: 15px; }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<h1>Visitors Data</h1>
+<h1>Visitors Full Data</h1>
 
 <div id="loading">Loading data, please wait...</div>
 <table id="visitors-table" style="display:none;">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>IP Address</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>ISP</th>
-      <th>Timezone</th>
-      <th>Browser Info</th>
-      <th>Screen Resolution</th>
-      <th>Visit Time</th>
+      <th>id</th>
+      <th>ip_address</th>
+      <th>geo_json</th>
+      <th>client_json</th>
+      <th>browser_info</th>
+      <th>screen_resolution</th>
+      <th>color_depth</th>
+      <th>device_memory</th>
+      <th>hardware_concurrency</th>
+      <th>connection_info</th>
+      <th>timezone</th>
+      <th>referrer</th>
+      <th>user_agent</th>
+      <th>platform</th>
+      <th>accept_language</th>
+      <th>plugins</th>
+      <th>battery_info</th>
+      <th>pointer_types</th>
+      <th>touch_support</th>
+      <th>do_not_track</th>
+      <th>visit_time</th>
     </tr>
   </thead>
   <tbody></tbody>
@@ -37,6 +55,20 @@
 
 <script>
 $(document).ready(function() {
+  function escapeHtml(text) {
+    return $('<div>').text(text).html();
+  }
+
+  function prettyJson(jsonStr) {
+    if(!jsonStr) return '';
+    try {
+      var obj = JSON.parse(jsonStr);
+      return JSON.stringify(obj, null, 2);
+    } catch(e) {
+      return escapeHtml(jsonStr);
+    }
+  }
+
   $.ajax({
     url: 'https://karkiandasuppliers.com/fetch_visitors.php',
     method: 'GET',
@@ -55,32 +87,43 @@ $(document).ready(function() {
       $('#visitors-table').show();
 
       data.forEach(function(v) {
-        // Parse geo_json safely
-        var geo = {};
-        try {
-          geo = JSON.parse(v.geo_json) || {};
-        } catch(e) {}
+        var row = '<tr>';
+        row += '<td>' + escapeHtml(v.id) + '</td>';
+        row += '<td>' + escapeHtml(v.ip_address) + '</td>';
 
-        var country = geo.country || '';
-        var city = geo.city || '';
-        var isp = geo.isp || '';
-        var timezone = geo.timezone || '';
+        // Show pretty formatted JSON for geo_json
+        row += '<td><pre>' + prettyJson(v.geo_json) + '</pre></td>';
 
-        var browserInfo = v.browser_info || '';
-        var screenRes = v.screen_resolution || '';
-        var visitTime = v.visit_time || '';
+        // client_json can be large - pretty print
+        row += '<td><pre>' + prettyJson(v.client_json) + '</pre></td>';
 
-        var row = '<tr>' +
-          '<td>' + v.id + '</td>' +
-          '<td>' + v.ip_address + '</td>' +
-          '<td>' + country + '</td>' +
-          '<td>' + city + '</td>' +
-          '<td>' + isp + '</td>' +
-          '<td>' + timezone + '</td>' +
-          '<td><pre>' + $('<div>').text(browserInfo).html() + '</pre></td>' +
-          '<td>' + screenRes + '</td>' +
-          '<td>' + visitTime + '</td>' +
-          '</tr>';
+        row += '<td><pre>' + escapeHtml(v.browser_info || '') + '</pre></td>';
+        row += '<td>' + escapeHtml(v.screen_resolution || '') + '</td>';
+        row += '<td>' + escapeHtml(v.color_depth || '') + '</td>';
+        row += '<td>' + escapeHtml(v.device_memory || '') + '</td>';
+        row += '<td>' + escapeHtml(v.hardware_concurrency || '') + '</td>';
+
+        // connection_info pretty JSON
+        row += '<td><pre>' + prettyJson(v.connection_info) + '</pre></td>';
+
+        row += '<td>' + escapeHtml(v.timezone || '') + '</td>';
+        row += '<td>' + escapeHtml(v.referrer || '') + '</td>';
+        row += '<td><pre>' + escapeHtml(v.user_agent || '') + '</pre></td>';
+        row += '<td>' + escapeHtml(v.platform || '') + '</td>';
+        row += '<td>' + escapeHtml(v.accept_language || '') + '</td>';
+
+        // plugins pretty JSON
+        row += '<td><pre>' + prettyJson(v.plugins) + '</pre></td>';
+
+        // battery_info pretty JSON
+        row += '<td><pre>' + prettyJson(v.battery_info) + '</pre></td>';
+
+        row += '<td>' + escapeHtml(v.pointer_types || '') + '</td>';
+        row += '<td>' + escapeHtml(v.touch_support || '') + '</td>';
+        row += '<td>' + escapeHtml(v.do_not_track || '') + '</td>';
+        row += '<td>' + escapeHtml(v.visit_time || '') + '</td>';
+
+        row += '</tr>';
         $('#visitors-table tbody').append(row);
       });
     },
