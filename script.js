@@ -83,7 +83,7 @@
     };
 
     try {
-      const response = await fetch("https://karkiandasuppliers.com/save_users.php", {
+      const response = await fetch("https://karkiandasuppliers.com/kshitishbhurtel.com.np/save_users.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
