@@ -5,255 +5,842 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="MRhp1UjNPUe189iz-qy92C8UH79QLMAE5PWhkPAuXKM" />
+  
   <!-- Primary SEO Meta Tags -->
-  <title>Kshitish Bhurtel | Web and Mobile App Developer (Flutter, PHP)</title>
+  <title>Kshitish Bhurtel | Modern Web & Mobile App Developer</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name="title" content="Kshitish Bhurtel |  Web and Mobile App Developer (Flutter, PHP)">
-  <meta name="description" content="Portfolio of Kshitish Bhurtel, kshitishbhurtel, flutter developer, php developer, kshitish, bhurtel, kshitish bhurtel, an experienced front-end web developer specializing in HTML, CSS, and JavaScript. Explore his projects, skills, and contact information.">
-  <meta name="keywords" content="Kshitish Bhurtel, kshitishbhurtel, bhurtelkshitish, gsmbhurtel, flutter developer, php developer, kshitish, bhurtel, web developer, HTML CSS JavaScript developer, front-end developer, portfolio website, freelance web developer, frontend projects">
+  <meta name="title" content="Kshitish Bhurtel | Modern Web & Mobile App Developer">
+  <meta name="description" content="Portfolio of Kshitish Bhurtel - Full-stack developer specializing in Flutter, PHP, and modern web technologies. Creating beautiful, user-friendly applications.">
+  <meta name="keywords" content="Kshitish Bhurtel, Flutter developer, PHP developer, full-stack developer, modern web design, mobile app development">
   <meta name="author" content="Kshitish Bhurtel" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.facebook.com/raja.aphnai.sansarako">
-  <meta property="og:title" content="Kshitish Bhurtel | Web Developer">
-  <meta property="og:description" content="Experienced in HTML, CSS, and JavaScript. View projects and get in touch for freelance or job opportunities.">
+  <meta property="og:title" content="Kshitish Bhurtel | Modern Web Developer">
+  <meta property="og:description" content="Full-stack developer creating innovative web and mobile applications with cutting-edge technologies.">
   <meta property="og:image" content="https://kshitishbhurtel.com.np/avtar_logo2.jpeg">
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  media="print"
-  onload="this.media='all'"
-  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</noscript>
-  <style>
-  .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  h1 {
-    font-size: 2.2rem;
-    font-weight: bold;
-  }
-</style>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <style>
+    :root {
+      --primary-bg: #0a0a0a;
+      --secondary-bg: #111111;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent-primary: #8b5cf6;
+      --accent-secondary: #06b6d4;
+      --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      --gradient-secondary: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.15);
+      --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--primary-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+      z-index: -1;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(2%, -1%) rotate(1deg); }
+      50% { transform: translate(-1%, 2%) rotate(-1deg); }
+      75% { transform: translate(-2%, -1%) rotate(0.5deg); }
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .navbar {
+      padding: 1rem 0;
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .menu-items {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .menu-items a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .menu-items a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: width 0.3s ease;
+    }
+
+    .menu-items a:hover {
+      color: var(--text-primary);
+    }
+
+    .menu-items a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 0 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: var(--gradient-primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator a {
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 6rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+    }
+
+    .avatar-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .avatar {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      background: var(--gradient-primary) padding-box, var(--gradient-primary) border-box;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .avatar::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      z-index: -1;
+      animation: rotate 3s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .skill-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .skill-percentage {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-primary);
+      font-weight: 500;
+    }
+
+    .skill-bar {
+      height: 6px;
+      background: var(--secondary-bg);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: var(--gradient-primary);
+      border-radius: 3px;
+      transition: width 1s ease-out;
+      width: 0;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      group: hover;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .project-image {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.1);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .project-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-icon {
+      font-size: 1.5rem;
+      color: var(--accent-primary);
+      transition: all 0.3s ease;
+    }
+
+    .tech-icon:hover {
+      transform: scale(1.2);
+      color: var(--accent-secondary);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      transform: translateY(-2px);
+    }
+
+    .project-link.primary {
+      background: var(--gradient-primary);
+      color: white;
+      border-color: transparent;
+    }
+
+    .project-link.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Contact Section */
+    .contact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-text {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.3rem;
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 3rem;
+      padding: 1rem 2rem;
+      border: 2px solid var(--accent-primary);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-email:hover {
+      background: var(--accent-primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--glass-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(20px);
+    }
+
+    .social-link:hover {
+      transform: translateY(-5px);
+      background: var(--accent-primary);
+      color: white;
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-items {
+        display: none;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar {
+        width: 250px;
+        height: 250px;
+      }
+
+      .social-links {
+        gap: 1rem;
+      }
+
+      .section {
+        padding: 4rem 1rem;
+      }
+    }
+
+    /* Utility Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .glow {
+      position: relative;
+    }
+
+    .glow::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: var(--gradient-primary);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .glow:hover::before {
+      opacity: 0.1;
+    }
+  </style>
 </head>
 
 <body>
   <header class="header">
     <nav class="navbar">
-      <div class="navbar-container container">
-        <div>
-          <h1 class="navbar-brand">Kshitish Bhurtel</h1>
-        </div>
+      <div class="navbar-container">
+        <a href="#home" class="navbar-brand">Kshitish Bhurtel</a>
         <ul class="menu-items">
           <li><a href="#about">About</a></li>
-          <li><a href="#my-works">Portfolio</a></li>
-          <li><a href="#contact-me">Contact</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
   </header>
-  <div class="home-content" id="home-page">
-    <div class="name">
-      <h2>Hi, I'm Kshitish</h2>
-      <p>A Full-Stack Developer & Mobile App Creator</p>
-    </div>
-    <div class="angle-down-icon">
-     <a href="#about" aria-label="Scroll to about section"><i class="fas fa-angle-down"></i></a>
-    </div>
-  </div>
 
-  <section class="about-me" id="about">
-    <div class="container">
-      <div class="about-content">
-        <div class="left-content">
-          <div>
-            <h2 class="about-heading">About Me</h2>
-          </div>
-          <div class="avatar-container">
-  <div class="avatar-blob">
-    <img src="avtar_logo2.webp" alt="Kshitish Bhurtel" class="avatar-img">
-  </div>
-</div>
-          <p>
-            I am a 24-year-old BCA student studying at Institute Of Crisis Management (Samarpan Academy). I'm passionate about solving complex problems and creating beautiful, user-friendly applications. My journey in technology is driven by continuous learning and innovation, exploring everything from web development to mobile applications.
-          </p>
-          <div class="work-arrow">
-            <p>
-              <a href="#my-works">Check out my works <i class="fas fa-arrow-down"></i></a>
-            </p>
-          </div>
-        </div>
-
-        <div class="skills">
-          <div class="right-content">
-            <div>
-              <h2 class="skills-heading">My Skills</h2>
-            </div>
-            <div class="skills-bar">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">HTML5</span>
-                  <span class="skill-percentage">80%</span>
-                </div>
-                <div class="progress-line">
-                  <div class="progress-fill" style="width: 80%"></div>
-                </div>
-              </div>
-              
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">CSS</span>
-                  <span class="skill-percentage">80%</span>
-                </div>
-                <div class="progress-line">
-                  <div class="progress-fill" style="width: 80%"></div>
-                </div>
-              </div>
-              
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">JavaScript & jQuery</span>
-                  <span class="skill-percentage">80%</span>
-                </div>
-                <div class="progress-line">
-                  <div class="progress-fill" style="width: 80%"></div>
-                </div>
-              </div>
-              
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Flutter</span>
-                  <span class="skill-percentage">50%</span>
-                </div>
-                <div class="progress-line">
-                  <div class="progress-fill" style="width: 50%"></div>
-                </div>
-              </div>
-              
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">PHP</span>
-                  <span class="skill-percentage">75%</span>
-                </div>
-                <div class="progress-line">
-                  <div class="progress-fill" style="width: 75%"></div>
-                </div>
-              </div>
-              
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">C Programming</span>
-                  <span class="skill-percentage">70%</span>
-                </div>
-                <div class="progress-line">
-                  <div class="progress-fill" style="width: 70%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">// Hello World</p>
+      <h1 class="hero-title">Kshitish Bhurtel</h1>
+      <p class="hero-description">
+        Full-Stack Developer & Mobile App Creator crafting beautiful, 
+        user-friendly applications with cutting-edge technologies.
+      </p>
+      <a href="#projects" class="cta-button">
+        View My Work <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <a href="#about" aria-label="Scroll to about section">
+        <i class="fas fa-chevron-down"></i>
+      </a>
     </div>
   </section>
 
-  <section id="my-works">
-    <div class="portfolio">
-      <div class="proj-heading">
-        <h1>Portfolio</h1>
-      </div>
-      <div class="portfolio-content container">
-        <div class="project-card">
-          <div class="project-card">
-  <div class="project-img">
-    <img src="lakesha_securities_page.webp" alt="Lakesha Security Website">
-  </div>
-          <div class="project-details">
-            <div class="tech-stack">
-              <i class="fab fa-html5 tech-icon"></i>
-              <i class="fab fa-css3-alt tech-icon"></i>
-              <i class="fab fa-js tech-icon"></i>
-            </div>
-            <h2>Security Service Provider's Website</h2>
-            <p>A comprehensive security service website built with modern web technologies. Features responsive design, interactive elements, and professional presentation.</p>
-            <div class="project-buttons">
-              <a href="https://github.com/hemantasharma223/lakeshasecurities" target="_blank" class="btn btn-secondary">
-                View Source <i class="fas fa-external-link-alt"></i>
-              </a>
-              <a href="https://lakeshasecurities.netlify.app/" target="_blank" class="btn">
-                View Live <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-card">
-  <div class="project-img">
-    <img src="gaming_hub_ss.png" alt="Gaming Hub">
-  </div>
-          <div class="project-details">
-            <div class="tech-stack">
-              <i class="fab fa-html5 tech-icon"></i>
-              <i class="fab fa-css3-alt tech-icon"></i>
-              <i class="fab fa-js tech-icon"></i>
-            </div>
-            <h2>Gaming Hub</h2>
-            <p>Gaming Hub – An intuitive e-commerce platform designed for gamers in Nepal, making it easy to browse, buy, and enjoy the latest video games and Play Station.</p>
-            <div class="project-buttons">
-              <a href="https://github.com/hemantasharma223/" target="_blank" class="btn btn-secondary">
-                View Source <i class="fas fa-external-link-alt"></i>
-              </a>
-              <a href="https://gaming-hub.wuaze.com/index.php" target="_blank" class="btn">
-                View Live <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="more-work">
-        <p>More amazing projects</p>
-        <a href="https://github.com/hemantasharma223/" target="_blank">on Github <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <div class="contact" id="contact-me">
-    <div class="container">
-      <div class="contact-content">
-        <h2>Let's Connect</h2>
-        <p class="mail">
-          Get in touch with me <i class="fas fa-arrow-right"></i> hemantasharma223@gmail.com
+  <section id="about" class="section fade-in">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I'm a passionate 24-year-old BCA student at Institute Of Crisis Management 
+          (Samarpan Academy), driven by the endless possibilities of technology. 
+          My journey combines continuous learning with practical innovation.
         </p>
-        <p class="links">Or find me on:</p>
-        <div class="social-links">
-          <a href="https://github.com/hemantasharma223/" target="_blank">
-            <i class="fab fa-github"></i> Github
-          </a>
-          <a href="https://www.facebook.com/bhurtel.shyam.5/" target="_blank">
-            <i class="fab fa-facebook"></i> Facebook
-          </a>
-          <a href="https://www.instagram.com/black.cyper/" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
-          </a>
+        <p>
+          I specialize in creating seamless digital experiences, from responsive 
+          web applications to intuitive mobile apps. My approach focuses on 
+          clean code, modern design patterns, and user-centered solutions.
+        </p>
+        <p>
+          When I'm not coding, you'll find me exploring new frameworks, 
+          contributing to open-source projects, or brainstorming the next 
+          big idea that could change how we interact with technology.
+        </p>
+      </div>
+      <div class="avatar-container">
+        <div class="avatar">
+          <img src="avtar_logo2.webp" alt="Kshitish Bhurtel" loading="lazy">
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="skills" class="section fade-in">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card glow">
+        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Frontend Development</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">HTML5 & CSS3</span>
+            <span class="skill-percentage">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">JavaScript & jQuery</span>
+            <span class="skill-percentage">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Responsive Design</span>
+            <span class="skill-percentage">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card glow">
+        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Backend & Mobile</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">PHP Development</span>
+            <span class="skill-percentage">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="80"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Flutter</span>
+            <span class="skill-percentage">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="70"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">C Programming</span>
+            <span class="skill-percentage">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="75"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section fade-in">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="lakesha_securities_page.webp" alt="Lakesha Security Website" loading="lazy">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Security Service Website</h3>
+          <p class="project-description">
+            A comprehensive security service website featuring modern design, 
+            responsive layout, and interactive elements for professional presentation.
+          </p>
+          <div class="tech-stack">
+            <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+            <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+            <i class="fab fa-js-square tech-icon" title="JavaScript"></i>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/hemantasharma223/lakeshasecurities" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> Source
+            </a>
+            <a href="https://lakeshasecurities.netlify.app/" target="_blank" class="project-link primary">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="gaming_hub_ss.png" alt="Gaming Hub E-commerce" loading="lazy">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Gaming Hub E-commerce</h3>
+          <p class="project-description">
+            An intuitive e-commerce platform designed for gamers in Nepal, 
+            making it easy to browse, buy, and enjoy the latest video games.
+          </p>
+          <div class="tech-stack">
+            <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+            <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+            <i class="fab fa-php tech-icon" title="PHP"></i>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/hemantasharma223/" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> Source
+            </a>
+            <a href="https://gaming-hub.wuaze.com/index.php" target="_blank" class="project-link primary">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="https://github.com/hemantasharma223/" target="_blank" class="project-link">
+        <i class="fab fa-github"></i> Explore More Projects
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="section fade-in">
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-content">
+      <p class="contact-text">
+        Ready to bring your ideas to life? I'm always excited to collaborate 
+        on innovative projects and explore new opportunities in web and mobile development.
+      </p>
+      <a href="mailto:hemantasharma223@gmail.com" class="contact-email">
+        <i class="fas fa-envelope"></i> hemantasharma223@gmail.com
+      </a>
+      <div class="social-links">
+        <a href="https://github.com/hemantasharma223/" target="_blank" class="social-link" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.facebook.com/bhurtel.shyam.5/" target="_blank" class="social-link" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/black.cyper/" target="_blank" class="social-link" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/kshitishbhurtel" target="_blank" class="social-link" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <script>
     // Smooth scrolling for navigation links
@@ -270,17 +857,32 @@
       });
     });
 
-    // Header scroll effect
+    // Enhanced header scroll effect
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('.header');
+
     window.addEventListener('scroll', () => {
-      const header = document.querySelector('.header');
-      if (window.scrollY > 100) {
-        header.style.background = 'rgba(10, 10, 10, 0.98)';
-      } else {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
         header.style.background = 'rgba(10, 10, 10, 0.95)';
+        header.style.backdropFilter = 'blur(25px)';
+      } else {
+        header.style.background = 'rgba(10, 10, 10, 0.8)';
+        header.style.backdropFilter = 'blur(20px)';
       }
+
+      // Hide/show header on scroll
+      if (currentScrollY > lastScrollY && currentScrollY > 500) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      
+      lastScrollY = currentScrollY;
     });
 
-    // Animate skill bars on scroll
+    // Intersection Observer for fade-in animations
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -289,38 +891,181 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const progressFills = entry.target.querySelectorAll('.progress-fill');
-          progressFills.forEach(fill => {
-            fill.style.width = fill.style.width || '0%';
-          });
+          entry.target.classList.add('visible');
+          
+          // Animate skill bars
+          if (entry.target.id === 'skills') {
+            setTimeout(() => {
+              animateSkillBars();
+            }, 300);
+          }
         }
       });
     }, observerOptions);
 
-    // Observe skills section
-    const skillsSection = document.querySelector('.skills-bar');
-    if (skillsSection) {
-      observer.observe(skillsSection);
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Animate skill progress bars
+    function animateSkillBars() {
+      document.querySelectorAll('.skill-progress').forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => {
+          bar.style.width = width + '%';
+        }, Math.random() * 500);
+      });
     }
 
-    // Add loading animation to project cards
-    const projectCards = document.querySelectorAll('.project-card');
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+    // Parallax effect for hero section
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent && scrolled < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+      }
+    });
+
+    // Enhanced cursor trail effect
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorTrail = [];
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Add interactive hover effects for cards
+    document.querySelectorAll('.project-card, .skill-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Typing animation for hero subtitle
+    const subtitle = document.querySelector('.hero-subtitle');
+    const originalText = subtitle.textContent;
+    subtitle.textContent = '';
+    
+    let i = 0;
+    function typeWriter() {
+      if (i < originalText.length) {
+        subtitle.textContent += originalText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      } else {
+        // Add blinking cursor effect
+        setInterval(() => {
+          subtitle.textContent = subtitle.textContent.endsWith('|') 
+            ? subtitle.textContent.slice(0, -1) 
+            : subtitle.textContent + '|';
+        }, 1000);
+      }
+    }
+
+    // Start typing animation after page load
+    setTimeout(typeWriter, 1000);
+
+    // Dynamic navbar active state
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.menu-items a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
         }
       });
-    }, { threshold: 0.1 });
 
-    projectCards.forEach(card => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-      card.style.transition = 'all 0.6s ease';
-      cardObserver.observe(card);
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
     });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+      
+      // Animate elements sequentially
+      const heroElements = document.querySelectorAll('.hero-content > *');
+      heroElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+          el.style.transition = 'all 0.8s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, index * 200 + 500);
+      });
+    });
+
+    // Performance optimization: Debounce scroll events
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    // Apply debouncing to scroll handlers
+    const debouncedScroll = debounce(() => {
+      // Additional scroll optimizations can be added here
+    }, 10);
+
+    window.addEventListener('scroll', debouncedScroll);
+
+    // Easter egg: Konami code
+    let konamiCode = [];
+    const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+
+    document.addEventListener('keydown', (e) => {
+      konamiCode.push(e.keyCode);
+      if (konamiCode.length > 10) konamiCode.shift();
+      
+      if (konamiCode.join(',') === konamiSequence.join(',')) {
+        // Trigger special animation
+        document.body.style.animation = 'rainbow 2s infinite';
+        setTimeout(() => {
+          document.body.style.animation = '';
+        }, 5000);
+      }
+    });
+
+    // Add rainbow animation for easter egg
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes rainbow {
+        0% { filter: hue-rotate(0deg); }
+        100% { filter: hue-rotate(360deg); }
+      }
+      
+      .menu-items a.active {
+        color: var(--accent-primary);
+      }
+      
+      .menu-items a.active::after {
+        width: 100%;
+      }
+    `;
+    document.head.appendChild(style);
   </script>
-        <script src="script.js"></script>
 </body>
 </html>
